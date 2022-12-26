@@ -1,0 +1,35 @@
+/**
+ * Config: Typography
+ * -----------------------------------------------------------------------------
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+
+/**
+ * Font stack
+ */
+$FONT_HEADING: 'Oxygen', sans-serif;
+$FONT_BODY: 'Oxygen', sans-serif;
+
+/**
+ * Weights
+ */
+$WEIGHT_BOOK: 400;
+$WEIGHT_MEDIUM: 500;
+$WEIGHT_SEMIBOLD: 600;
+$WEIGHT_BOLD: 700;
+
+/**
+ * Line heights
+ */
+$LINE_HEIGHT_BASE: 1;
+$LINE_HEIGHT_S: 1.05;
+$LINE_HEIGHT_M: 1.2;
+$LINE_HEIGHT_BODY: 1.6;
+$LINE_HEIGHT_L: 1.8;
+
+/**
+ * Letter spacing
+ */
+$LETTER_SPACING_MINUS: -1px;
+$LETTER_SPACING_PLUS: 0.75px;

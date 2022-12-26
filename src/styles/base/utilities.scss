@@ -1,0 +1,9 @@
+/*
+ * Base: Utilities
+ * -----------------------------------------------------------------------------
+ * Utility classes for global use.
+ *
+ */
+.visually-hidden {
+  @include visually-hidden;
+}

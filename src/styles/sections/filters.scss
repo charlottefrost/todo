@@ -1,0 +1,17 @@
+/*
+ * Section: Filters
+ * -----------------------------------------------------------------------------
+ * Styling for the filters section.
+ *
+ */
+.filters {
+  &__form {
+    margin-bottom: $SPACING_3XL;
+  }
+
+  @include respond(small) {
+    &__form {
+      margin-bottom: $SPACING_2XL;
+    }
+  }
+}

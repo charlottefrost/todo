@@ -1,0 +1,39 @@
+/*
+ * Config: Colors
+ * -----------------------------------------------------------------------------
+ * All colour variables for global use.
+ *
+ */
+$COLOR_PRIMARY: rgb(252, 194, 215);
+$COLOR_SECONDARY: rgb(121, 80, 242);
+$COLOR_TERTIARY: rgb(26, 26, 26);
+
+/**
+ * Greys, etc
+ */
+$COLOR_WHITE: rgb(255, 255, 255);
+$COLOR_GREY_LIGHT_1: rgb(210, 210, 210);
+$COLOR_GREY_LIGHT_2: rgb(188, 188, 188);
+$COLOR_GREY_MEDIUM: rgb(54, 54, 54);
+$COLOR_GREY_DARK: rgb(32, 32, 32);
+$COLOR_BLACK: rgb(0, 0, 0);
+
+/**
+ * Priorities
+ */
+$COLOR_PRIORITY_URGENT: rgb(239, 68, 68);
+$COLOR_PRIORITY_HIGH: rgb(248, 113, 113);
+$COLOR_PRIORITY_MED: rgb(251, 146, 60);
+$COLOR_PRIORITY_LOW: rgb(132, 204, 22);
+
+/**
+ * For backgrounds, text
+ */
+$GRADIENT: linear-gradient(to right bottom, $COLOR_PRIMARY, $COLOR_SECONDARY);
+$COLOR_BACKGROUND: $COLOR_TERTIARY;
+$COLOR_BACKGROUND_TINT: $COLOR_GREY_DARK;
+
+$COLOR_TEXT_PRIMARY: $COLOR_GREY_LIGHT_1;
+$COLOR_TEXT_SECONDARY: $COLOR_SECONDARY;
+$COLOR_TEXT_INVERSE: $COLOR_TERTIARY;
+$COLOR_TEXT_LIGHT: $COLOR_WHITE;

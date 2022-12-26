@@ -1,0 +1,60 @@
+/**
+ * Config: Mixins
+ * -----------------------------------------------------------------------------
+ */
+
+/**
+ * Media queries
+ * 1em = 16px
+ */
+$SCREEN_WIDE: 75em; // 1200px
+$SCREEN_LARGE: 59em; // 944px
+$SCREEN_MEDIUM: 44em; // 704px
+$SCREEN_SMALL: 34em; // 544px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small {
+    @media only screen and (max-width: $SCREEN_SMALL) {
+      @content;
+    } // 544px
+  }
+  @if $breakpoint == medium {
+    @media only screen and (max-width: $SCREEN_MEDIUM) {
+      @content;
+    } // 704px
+  }
+  @if $breakpoint == large {
+    @media only screen and (max-width: $SCREEN_LARGE) {
+      @content;
+    } // 944px
+  }
+  @if $breakpoint == wide {
+    @media only screen and (min-width: $SCREEN_WIDE) {
+      @content;
+    } // 1200px
+  }
+}
+
+@mixin absolute-center() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vertical-center() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

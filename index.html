@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/img/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/img/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.scss" />
+    <script type="module" src="src/js/controller.js"></script>
+  </head>
+  <body>
+    <header class="header" js-header="container">
+      <button
+        class="header__nav-btn"
+        aria-label="Open navigation"
+        aria-live="polite"
+        js-header="navToggle"
+      >
+        &nbsp;
+      </button>
+      <h1 class="header__title">todo.</h1>
+    </header>
+
+    <nav class="nav" js-nav="nav">
+      <ul class="nav__list" js-categories="container"></ul>
+    </nav>
+
+    <main>
+      <section class="filters" js-filters="container">
+        <h2 class="heading heading--primary" js-filters="title"></h2>
+
+        <form class="filters__form form form--thin" js-filters="form">
+          <div class="form__group">
+            <select
+              id="sortby"
+              class="form__select"
+              name="priority"
+              js-filters="input"
+              disabled
+            >
+              <option value="" disabled selected hidden>Sort by</option>
+              <option value="date">Date added</option>
+              <option value="priority">Priority</option>
+            </select>
+            <label class="form__label visually-hidden" for="sortby">
+              Priority
+            </label>
+          </div>
+        </form>
+      </section>
+
+      <section class="task-view">
+        <article class="task-view__tasks" js-task="container"></article>
+
+        <button
+          class="task-view__btn btn btn--primary btn--icon"
+          title="Add a task"
+          js-add-task="showBtn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            width="20"
+            viewBox="0 0 40 40"
+            fill="#1a1a1a"
+          >
+            <path
+              d="M18.625 31.667V21.375H8.333v-2.75h10.292V8.333h2.75v10.292h10.292v2.75H21.375v10.292Z"
+            />
+          </svg>
+          <span class="visually-hidden">Add a task</span>
+        </button>
+
+        <form class="form form--2-col form--init-hidden" js-add-task="form">
+          <div class="form__group form__group--full-width">
+            <input
+              id="task"
+              type="text"
+              class="form__input"
+              name="task"
+              placeholder="Task..."
+              required
+            />
+            <label class="form__label" for="task">Task</label>
+          </div>
+
+          <div class="form__group">
+            <input
+              id="category"
+              type="text"
+              class="form__input"
+              name="category"
+              placeholder="Category"
+            />
+            <label class="form__label" for="category">Category</label>
+          </div>
+
+          <div class="form__group">
+            <select id="priority" class="form__select" name="priority" required>
+              <option value="" disabled selected hidden>Priority</option>
+              <option value="urgent">Urgent</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <label class="form__label visually-hidden" for="priority">
+              Priority
+            </label>
+          </div>
+
+          <button
+            class="btn btn--primary"
+            title="Add"
+            type="submit"
+            js-add-task="submit"
+          >
+            Add
+          </button>
+
+          <button
+            class="btn btn--cancel"
+            title="Add"
+            type="button"
+            js-add-task="hideBtn"
+          >
+            Cancel
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        &copy;
+        <a href="https://github.com/charlottefrost" target="_blank"
+          >Charlotte Frost</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

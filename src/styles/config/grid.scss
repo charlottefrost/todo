@@ -1,0 +1,13 @@
+/**
+ * Config: Grid
+ * -----------------------------------------------------------------------------
+ */
+.grid {
+  display: grid;
+  column-gap: $LAYOUT_XS;
+  row-gap: $LAYOUT_M;
+
+  &:not(:last-child) {
+    margin-bottom: $LAYOUT_M;
+  }
+}

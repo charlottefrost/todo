@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "Todo list app",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Charlotte Frost",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.8.1",
+    "@parcel/transformer-sass": "^2.8.1",
+    "@parcel/transformer-webmanifest": "^2.8.1",
+    "core-js": "^3.26.1",
+    "parcel": "^2.8.1"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}

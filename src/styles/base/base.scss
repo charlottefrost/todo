@@ -1,0 +1,61 @@
+/*
+ * Base: Base
+ * -----------------------------------------------------------------------------
+ * Base styling for core elements.
+ *
+ */
+body,
+html {
+  height: 100%;
+}
+
+html {
+  /* 10px (desired size) / 16px (default size) = 0.625 = 62.5% */
+  /* Percentage of the user's browser font size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
+  @include respond(large) {
+    font-size: 56.25%;
+  }
+
+  @include respond(medium) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background: $COLOR_BACKGROUND;
+  color: $COLOR_TEXT_PRIMARY;
+  display: grid;
+  font-family: $FONT_BODY;
+  font-weight: $WEIGHT_BOOK;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas:
+    'header header'
+    'nav main'
+    '. footer';
+  line-height: $LINE_HEIGHT_BASE;
+
+  @include respond(large) {
+    grid-template-areas:
+      'header header'
+      'main main'
+      'footer footer';
+  }
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: $SPACING_3XL;
+
+  @include respond(large) {
+    padding: $SPACING_2XL;
+  }
+
+  @include respond(small) {
+    padding: $SPACING_2XL $SPACING_L;
+  }
+}

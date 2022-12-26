@@ -1,0 +1,101 @@
+/*
+ * Base: Forms
+ * -----------------------------------------------------------------------------
+ * Base styling for form elements.
+ *
+ */
+.form {
+  $parent: &;
+  background: $COLOR_BACKGROUND_TINT;
+  max-height: 50rem;
+  overflow: hidden;
+  padding: $SPACING_L;
+  transition: all $TIMING_MED ease-out;
+
+  &__group {
+    position: relative;
+
+    &--full-width {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__input,
+  &__select {
+    background: $COLOR_BACKGROUND_TINT;
+    border: 1px solid;
+    border-image: linear-gradient(to right, $COLOR_PRIMARY, $COLOR_SECONDARY) 1;
+    color: $COLOR_TEXT_PRIMARY;
+    font-size: 1.5rem;
+    height: 5.5rem;
+    transition: all $TIMING_SHORT ease-out;
+    width: 100%;
+  }
+
+  &__input {
+    padding: $SPACING_XL $SPACING_L $SPACING_S;
+
+    &::placeholder {
+      color: $COLOR_GREY_LIGHT_2;
+    }
+
+    &:placeholder-shown {
+      padding: $SPACING_L $SPACING_M;
+    }
+
+    &:placeholder-shown + #{$parent}__label {
+      @include vertical-center;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__select {
+    appearance: none;
+    background-image: url('.././icons/icon-chevron-down.svg');
+    background-position: calc(100% - $SPACING_S) center;
+    background-repeat: no-repeat;
+    background-size: 2.4rem;
+    padding: $SPACING_M;
+  }
+
+  &__label {
+    backface-visibility: hidden;
+    display: block;
+    font-size: 1.2rem;
+    left: $SPACING_L;
+    opacity: 1;
+    position: absolute;
+    top: $SPACING_M;
+    transform: translateY(0);
+    transition: all $TIMING_MED;
+    visibility: visible;
+    will-change: transform;
+  }
+
+  &--2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $SPACING_M;
+  }
+
+  &--thin {
+    #{$parent}__input,
+    #{$parent}__select {
+      height: 4.5rem;
+    }
+  }
+
+  &--init-hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+  }
+
+  @include respond(small) {
+    &--2-col {
+      grid-template-columns: auto;
+    }
+  }
+}

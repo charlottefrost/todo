@@ -1,0 +1,26 @@
+/*
+ * Base: Typography
+ * -----------------------------------------------------------------------------
+ * Styling for text elements.
+ *
+ */
+
+a {
+  &:link,
+  &:visited {
+    color: $COLOR_PRIMARY;
+    text-decoration: none;
+    transition: all $TIMING_SHORT ease;
+  }
+
+  &:hover {
+    color: $COLOR_SECONDARY;
+  }
+}
+
+.heading {
+  &--primary {
+    font-size: 2rem;
+    margin-bottom: $SPACING_XL;
+  }
+}

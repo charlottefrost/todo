@@ -1,0 +1,61 @@
+/*
+ * Layout: Nav
+ * -----------------------------------------------------------------------------
+ * Styling for the nav.
+ *
+ */
+.nav {
+  background-color: $COLOR_BACKGROUND_TINT;
+  grid-area: nav;
+  grid-row: 2 / -1;
+  overflow-y: auto;
+
+  &__btn {
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      $COLOR_GREY_MEDIUM 50%
+    );
+    background-size: 220%;
+    font-size: 1.5rem;
+    padding: $SPACING_XL $SPACING_3XL $SPACING_XL $SPACING_XL;
+    position: relative;
+    transition: all $TIMING_MED;
+    width: 100%;
+
+    &::after {
+      @include vertical-center;
+      background: $COLOR_PRIMARY;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      right: $SPACING_XL;
+      width: 1rem;
+    }
+
+    &:hover {
+      background-position: 100%;
+    }
+  }
+
+  @include respond(large) {
+    border-top: 2px solid $COLOR_GREY_MEDIUM;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: var(--header-height);
+    transform: translateX(-100%);
+    transition: all $TIMING_MED ease;
+    will-change: transform;
+    z-index: 10;
+
+    &.open {
+      pointer-events: auto;
+      transform: translate(0);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/*
+ * Section: Task View
+ * -----------------------------------------------------------------------------
+ * Styling for the tasks view section.
+ *
+ */
+.task-view {
+  &__btn {
+    margin-bottom: $SPACING_L;
+  }
+}

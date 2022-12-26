@@ -1,0 +1,56 @@
+/*
+ * Component: Button
+ * -----------------------------------------------------------------------------
+ * Styling for button elements.
+ *
+ */
+.btn {
+  &,
+  &:link,
+  &:visited {
+    border-radius: 2px;
+    color: inherit;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: $WEIGHT_SEMIBOLD;
+    padding: $SPACING_L $SPACING_2XL;
+    text-align: center;
+    text-decoration: none;
+    transition: all $TIMING_MED ease-in-out;
+  }
+
+  &--primary {
+    background: $GRADIENT;
+    background-size: 300% 100%;
+    color: $COLOR_TEXT_INVERSE;
+
+    &:hover {
+      background-position: 100% 0;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    border: 2px solid $COLOR_PRIMARY;
+    color: $COLOR_PRIMARY;
+
+    &:hover {
+      background: $COLOR_PRIMARY;
+      color: $COLOR_TEXT_INVERSE;
+    }
+  }
+
+  &--cancel {
+    background: transparent;
+    color: $COLOR_TEXT_PRIMARY;
+
+    &:hover {
+      background: $COLOR_GREY_LIGHT_1;
+      color: $COLOR_TEXT_INVERSE;
+    }
+  }
+
+  &--icon {
+    padding: $SPACING_M $SPACING_L;
+  }
+}
