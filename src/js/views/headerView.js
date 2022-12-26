@@ -12,6 +12,8 @@ class headerView extends View {
   _navToggle = document.querySelector('[js-header="navToggle"]');
   _nav = document.querySelector('[js-nav="nav"]');
   _errorMessage = '';
+  _stringOpenNav = 'Open navigation';
+  _stringCloseNav = 'Close navigation';
 
   constructor() {
     super();
@@ -44,8 +46,19 @@ class headerView extends View {
     // Update button label
     this._navToggle.setAttribute(
       'aria-label',
-      label === 'Open navigation' ? 'Close navigation' : 'Open navigation'
+      label === this._stringOpenNav ? this._stringCloseNav : this._stringOpenNav
     );
+  }
+
+  /**
+   * Close nav only
+   */
+  closeNav() {
+    if (this._navToggle.classList.contains('open')) {
+      this._navToggle.classList.remove('open');
+      this._nav.classList.remove('open');
+      this._navToggle.setAttribute('aria-label', this._stringOpenNav);
+    }
   }
 
   /**

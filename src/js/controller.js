@@ -156,9 +156,9 @@ function controlNav(category) {
     filterView.disable();
   }
 
-  // Close form and nav
+  // Close form and nav if open
   addTaskView.closeForm();
-  headerView.toggleNav();
+  headerView.closeNav();
 }
 
 function init() {
